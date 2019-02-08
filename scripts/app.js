@@ -10,11 +10,11 @@ window.addEventListener('load', function(){
 // nav btn
 document.querySelector('.navBtn').addEventListener('click',function(){
     ui.shownav();
+});
 // control the video
 document.querySelector('.video__switch').addEventListener('click',function(){
     ui.videocontrols();
-})    
-});
+});  
 }
 //  CONSTRUCTOR FUNCTION START
 function UI(){
@@ -36,10 +36,7 @@ UI.prototype.videocontrols = function(){
     }else{
         btn.classList.remove('btnSlide')
         document.querySelector('.video__item').play()
-    }
-
-     
-   
+    } 
 }
 // END OF CONSTRUCTOR FUNCTION
 
