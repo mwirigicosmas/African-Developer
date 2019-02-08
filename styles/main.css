@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore|Open+Sans');
+:root{
+    --brightYellow:#e3b505;
+    --darkbrown:#bb9457;
+    --yellow:#f2b450;
+    --brown: #dea76d;
+    --black:#191919;
+    --grey:#a9b2ac;
+    --gunmetal:rgb(37, 50, 55);
+    --brilliantazure:#3185FC;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    color: var(--gunmetal);
+    font-family: 'Open Sans', sans-serif;
+    background:linear-gradient(rgba(245, 240, 240, 0.5), rgba(255, 255, 255, 0.5)),url('../img/bodybg.jpg');
+}
+/* global styles */
+.bell-fonts{
+    font-family: 'La Belle Aurore', cursive;
+}
+/* end of global styles */
+/*preloder*/
+.preloader{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: var(--brightYellow);
+    z-index: 999;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+
+
+}
+.preloader__item{
+    background-size: cover;
+    border-radius: 50%;
+}
+
+/* header */
+.header{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 80%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+@media screen and (max-width:768px){
+    .header{
+        background: url('../img/hero.jpg')center/cover fixed no-repeat;
+        /*
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat; */ 
+    }
+}
+/*banner*/
+.banner{
+    text-align: center;
+    z-index: 3;
+}
+.banner__title{
+    font-size: 4rem;
+    text-transform: capitalize;
+    color:whitesmoke;
+}
+@media screen and (min-width:768px){
+    .banner__title{
+        font-size: 9rem;
+    }
+}
+.banner__social-icon{
+    display: block;
+    text-decoration: none;
+    color: var(--gunmetal);
+    border: 0.1rem solid var(--gunmetal);
+    border-radius: 50%;
+    padding: 0.25rem;
+    transition: all 0.5s linear;
+}
+.banner__social-icon:hover{
+    background: var(--brilliantazure);
+    color: var(--brown);
+}
+.banner__icons{
+    width: 50%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4,2rem);
+    grid-column-gap: 0.5rem;
+    justify-content: center;
+}
+/*video  */
+.video__container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.video__item{
+    width:100%;
+    height: 100%;
+    object-fit: cover; 
+}
+/*nav Btn */
+.navBtn{
+    position: fixed;
+    top: 5%;
+    right: 5%;
+    font-size: 3rem;
+    color: #dea76d;
+    cursor: pointer;
+    animation-name: pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+/* nav Btn animation */
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.5);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+/* nav */
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 10rem;
+    background: rgba(37,50,55,0.9);
+}
+.nav__links{
+    list-style-type: none;
+}
+#lion{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    z-index: 3;
+    border-radius: 12px;
+}
+.nav__single-link{
+    display: block;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--brown);
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    transition: all 1s ease;
+}
+.nav__single-link:hover{
+    background: var(--brown);
+    color: rgba(37,50,55,0.9);
+    padding-left: 1.5rem;
+}
+/* */
+.nav{
+    width: 0;
+    overflow: hidden;
+    transition: all 0.2s linear;
+}
+.nav__show{
+    width: 10rem;
+}
+/* video switch*/
+.video__switch-container{
+    display: none;
+}
+@media screen and (min-width:768px){
+    .video__switch-container{
+        display: block;
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+        z-index: 3;
+
+    }
+    .video__switch{
+        position: relative;
+        width: 5rem;
+        background: var(--brown);
+        text-transform: uppercase;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.25rem;
+        cursor: pointer;
+        border-radius: 0.5rem;
+    }
+    .video__switch-btn{
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 50%;
+        background: var(--gunmetal);
+        border-radius: 0.5rem;
+        transition: all 0.2s ease;
+        
+    }
+    .btnSlide{
+        left: 50%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
