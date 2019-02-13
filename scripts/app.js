@@ -35,8 +35,22 @@ if(value){
 }else{
     ui.showFeedback('some form values are empty', 'error');
 }
-
 });
+
+// display modal
+const links = document.querySelectorAll('.work-item__icon');
+console.log(links);
+links.forEach(function(item){
+    item.addEventListener('click',function(event){
+        ui.showModal(event);
+    });
+});
+
+// hide modal
+document.querySelector('.work-modal__close').addEventListener('click',function(){
+    ui.closeModal();
+});
+
 }
 
 
@@ -111,8 +125,26 @@ UI.prototype.clearFields = function(){
     document.querySelector('.input-email').value = '';
 }
 
-// object constructor function for form
+// display modal
+UI.prototype.showModal = function(event){
+    event.preventDefault();
+    if(event.target.parentElement.classList.contains('work-item__icon')){
+        let id = event.target.parentElement.dataset.id;
+        
+        const modal = document.querySelector('.work-modal');
+        const modalItem= document.querySelector('.work-modal__item');
 
+        modal.classList.add('work-modal__show');
+        modalItem.style.backgroundImage = `url(img/${id}.jpg)`;
+    };
+}
+// hide modal
+UI.prototype.closeModal = function(){
+    document.querySelector('.work-modal').classList.remove('work-modal__show');
+}
+
+
+// object constructor function for form customer
 function Customer(name,lastName,email){
     this.name = name;
     this.lastName = lastName;

@@ -47,6 +47,10 @@ body{
 .section-title{
     padding: 1rem 0.5rem;
 }
+.section-title__left{
+    margin-left: 10rem; 
+}
+
 .section-title__name{
     font-size: 3rem;
     text-transform: capitalize;
@@ -280,16 +284,18 @@ body{
     margin: 0 auto;
     text-align: center;
 }
+
 .services-container{
+    display: grid;  
     max-width: 90vw;
     margin: 3rem auto;
     padding-bottom: 3rem;
     grid-column-gap: 2rem;
-    display: grid;
     grid-template-columns:repeat(4,1fr);  
     background: url(../img/wall.jpg);
     border-radius: 0.5rem;
 }
+
 .services__img-item{
     height: 200px;
     width: 200px;
@@ -304,6 +310,201 @@ body{
 }
 /*END OF SERVICES*/
 
+/* WORK SECTION START*/
+.work-container{
+    max-width: 90vw;
+    margin: 2rem auto;
+}
+.work-item__img{
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    display: block;
+    transition: all 1s linear;
+}
+.work-item{
+    background: linear-gradient(var(--brilliantazure),var(--brilliantazure));
+    overflow: hidden;
+    position: relative;
+}
+.work-item:hover .work-item__img{
+    opacity: 0.5;
+    cursor: pointer;
+    transform: scale(1.2);
+}
+.work-item__icon{
+    position: absolute;
+    color: var(--brightYellow);
+    top: 50%;
+    left: 50%;
+    display: inline-block;
+    font-size: 4rem;
+    text-decoration: none;
+    transition: all 0.5s ease;
+    transform: scale(0);
+}
+.work-item:hover .work-item__icon{
+    transform: scale(1.3) translate(-50%,-50%);
+}
+.work-item__icon:hover{
+    color: var(--brown);
+    cursor: pointer;
+}
+@media screen and (min-width:576px){
+    .work-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 2rem;
+    }
+}
+@media screen and (min-width:992px){
+    .work-container{
+        display: grid;
+        height: 100vh;
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: repeat(4,1fr);
+        grid-template-areas: 
+        "one one  two three"
+        "one one  four four"
+        "five six seven seven"
+        "eight nine seven seven"
+    }
+
+.item-1{
+    grid-area: one;
+}
+.item-2{
+    grid-area: two;
+}
+.item-3{
+    grid-area: three;
+}
+.item-4{
+    grid-area: four;
+}
+.item-5{
+    grid-area: five;
+}
+.item-6{
+    grid-area: six;
+}
+.item-7{
+    grid-area: seven;
+}
+.item-8{
+    grid-area: eight;
+}
+.item-9{
+    grid-area: nine;
+}
+}
+/*MODAL */
+.work-modal{
+    display: none;
+}
+.work-modal__show{
+    position: fixed;
+    background: rgba(0,0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 900; 
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+.work-modal__item{
+    background: url('../img/1.jpg')center/cover;
+    height: 70vh;
+    width: 80vw;
+    border:0.4rem solid var(--yellow);
+    border-radius:0.5rem
+}
+@media screen and(min-width:768px){
+    .work-modal__item{
+        height: 80vh;
+        width: 60vw;
+
+    }
+}
+.work-modal__close{
+    position: fixed;
+    font-size: 3rem;
+    color: var(--brightYellow);
+    bottom: 5%;
+    right: 5%;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: color 0.3s linear;
+
+}
+.work-modal__close:hover{
+    color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* WORK SECTION END */
 /* START FILL FORM*/
 .form{
     background: var(--darkbrown);
